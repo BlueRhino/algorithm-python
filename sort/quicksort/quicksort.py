@@ -22,6 +22,13 @@ def partition_arr(arr, start, end):
     return i + 1
 
 
+def quick_sort(arr, start, end):
+    if start < end:
+        index = partition_arr(arr, start, end)
+        quick_sort(arr, start, index - 1)
+        quick_sort(arr, index + 1, end)
+
+
 def __exchange_value(arr, index1, index2):
     arr_len = len(arr)
     if 0 <= index1 < arr_len and 0 <= index2 < arr_len:
