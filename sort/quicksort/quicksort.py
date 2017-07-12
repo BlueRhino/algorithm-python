@@ -1,3 +1,6 @@
+import random
+
+
 def partition_arr(arr, start, end):
     """
     对输入数组arr在范围start及end之间的元素使用快速排序，使用arr[end]元素作为排序分界
@@ -23,6 +26,15 @@ def partition_arr(arr, start, end):
 
 
 def quick_sort(arr, start, end):
+    if start < end:
+        index = partition_arr(arr, start, end)
+        quick_sort(arr, start, index - 1)
+        quick_sort(arr, index + 1, end)
+
+
+def quick_sort_random(arr, start, end):
+    i = random.randint(start, end)
+    __exchange_value(arr, i, end)
     if start < end:
         index = partition_arr(arr, start, end)
         quick_sort(arr, start, index - 1)

@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from sort.quicksort.quicksort import partition_arr, quick_sort
+from sort.quicksort.quicksort import partition_arr, quick_sort, quick_sort_random
 
 
 class TestPartitionArr(TestCase):
@@ -12,4 +12,9 @@ class TestPartitionArr(TestCase):
     def test_quick_sort(self):
         arr = [2, 8, 7, 1, 3, 5, 6, 4]
         quick_sort(arr, 0, 7)
+        self.assertEqual(arr, [1, 2, 3, 4, 5, 6, 7, 8])
+
+    def test_quick_sort_random(self):
+        arr = [2, 8, 7, 1, 3, 5, 6, 4]
+        quick_sort_random(arr, 0, 7)
         self.assertEqual(arr, [1, 2, 3, 4, 5, 6, 7, 8])
